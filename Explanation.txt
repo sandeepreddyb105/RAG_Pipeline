@@ -1,0 +1,11 @@
+1. Used Langchain framework to implement RAG
+	- Chroma db(persist on disk) is the vector store used(vector_db in the current folder structure) 
+	- Hugging face all-MiniLM-L6-v2 is used as the embedding model
+	- Tried using Hugging face LLM but due to heavier sizes of QA models RAM is getting crashed, so used open AI personal api key to return the responses
+2. Notebook folder > RAG.ipynb is the colab notebook with all the above mentioned things.
+3. created streamlit code  - app.py in the repo
+4. created  a docker file in the same folder structure which dockerizes the RAG pipeline with all the requirements with command -  docker build -t name:tag .
+5. Haven't implemented the Fast api due to time constraint
+6. 1.RAG can be implemented using Neo4j and other graph frameworks, where knowledge graphs acts as vector store to fetch the incontext data
+   2.We can use the normal chunking of the documents and vectorization techniques like word to vec, Bert etc and use the simantic similarity to query the 
+   embeddings and that can be passed to the LLM model for responses
